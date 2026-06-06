@@ -13,5 +13,5 @@
 
 .skip-link:focus {
   top: 0;
-  outline: 2px solid var(--primary-color);
+  outline: 2px solid var(--outline-color);
 }
