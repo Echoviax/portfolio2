@@ -1,0 +1,39 @@
+.nav-sidebar {
+    width: 25%;
+    max-width: 235px;
+    background-color: var(--primary-color);
+    height: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+}
+
+.nav-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+    width: 100%;
+}
+
+.nav-button {
+    width: 95%;
+    text-decoration: none;
+    text-align: left;
+    padding: 10px 20px;
+    font-size: 1.5em;
+    border-radius: 32px;
+}
+
+.nav-button:hover {
+    background-color: var(--hover-color);
+    transition: 0.25s;
+}
+
+.nav-footer {
+
+}

@@ -1,0 +1,20 @@
+:root {
+  --bg-color: #0e0e0e;
+  --primary-color: #a481fe;
+  --hover-color: #ffffff24;
+  --main-text: white;
+  --invert-text: black;
+  --neutral-gray: #9d9d9d;
+}
+
+[data-theme='light'] {
+  --bg-color: #fff;
+  --primary-color: #271d66;
+  --main-text: black;
+  --invert-text: white;
+  --neutral-gray: #636363;
+}
+
+body {
+    color: var(--main-text);
+}
