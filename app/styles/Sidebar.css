@@ -27,21 +27,23 @@
     padding: 12px 20px;
     font-size: 1.5rem;
     border-radius: 32px;
+    transition: background-color 0.25s;
 }
 
 .nav-button:hover, .theme-btn:hover {
     background-color: var(--hover-color);
-    transition: 0.25s;
 }
 
 .nav-button:focus-visible, .theme-btn:focus-visible {
-      background-color: var(--hover-color);
+    background-color: var(--hover-color);
 } 
 
 .nav-footer {
     position: absolute;
     bottom: 0px;
     padding-bottom: 30px;
+    gap: 1rem;
+    display: flex;
 }
 
 .theme-btn-parent {
@@ -61,4 +63,15 @@
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
+}
+
+.footer-btn {
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    transition: transform 0.25s;
+}
+
+.footer-btn:hover, .footer-btn:focus-visible {
+    transform: scale(1.1);
 }

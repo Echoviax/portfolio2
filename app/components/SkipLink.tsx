@@ -5,8 +5,6 @@ export default function SkipLink() {
         <a 
           href="#main" 
           className="skip-link"
-          tabIndex={1}
-          aria-label="Skip to main content"
           onClick={(e) => {
             e.preventDefault();
             document.getElementById('main')?.focus();

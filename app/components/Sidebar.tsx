@@ -2,8 +2,10 @@
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SidebarButton from "./SidebarButton";
-import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import SidebarLink from "./SidebarLink";
 
 export default function Sidebar() {
     const [theme, setTheme] = useState("dark");
@@ -45,9 +47,21 @@ export default function Sidebar() {
                 <SidebarButton link={"ai"} text="Non-AI Policy" />
             </section>
             <section className="nav-footer">
-                <p>github.com/Echoviax</p>
-                <p>lunariannova@gmail.com</p>
-                <p>linked.in/in/luna-berl</p>
+                <SidebarLink 
+                    link="https://github.com/Echoviax" 
+                    icon={faGithub}
+                    alt="Github" 
+                />
+                <SidebarLink 
+                    link="mailto:lunariannova@gmail.com" 
+                    icon={faEnvelope}
+                    alt="Email" 
+                />
+                <SidebarLink 
+                    link="https://linkedin.in/luna-berl" 
+                    icon={faLinkedin} 
+                    alt="LinkedIn"
+                />
             </section>
         </nav>
     );
