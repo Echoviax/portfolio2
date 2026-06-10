@@ -1,7 +1,4 @@
 #about-page {
-    width: 90%;
-    max-width: 1100px;
-    margin: 40px auto;
     display: grid;
     grid-template-areas:
         "image skills"
@@ -35,11 +32,48 @@
 
 .skill-cell {
     padding: 8px 18px;
-    border-radius: 32px;
-    background-color: var(--primary-color);
     font-size: 0.95rem;
     font-weight: 500;
     cursor: default;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.skill-language {
+    background-color: var(--skill-lang-bg);
+    border-radius: 32px;
+}
+
+.skill-framework {
+    background-color: var(--skill-frame-bg);
+    border-radius: 8px;
+}
+
+.skill-app {
+    background-color: transparent;
+    border: 2px solid var(--skill-app-color);
+    color: var(--main-text);
+    border-radius: 32px;
+}
+
+.skill-level-dots {
+    display: flex;
+    gap: 4px;
+    margin-left: 4px;
+}
+
+.skill-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 32px;
+    border: 1.5px solid currentColor; 
+    opacity: 0.5;
+}
+
+.skill-dot.filled {
+    background-color: currentColor;
+    opacity: 1;
 }
 
 #about-skill-parent {

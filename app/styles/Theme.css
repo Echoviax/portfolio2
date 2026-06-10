@@ -2,11 +2,15 @@
   --bg-color: #0e0e0e;
   --primary-color: #4d3f6f;
   --outline-color: #a897d4;
-  --panel-color: #ffffff44;
+  --panel-color: #ffffff30;
   --hover-color: #ffffff24;
   --main-text: white;
   --invert-text: black;
   --neutral-gray: #9d9d9d;
+
+  --skill-lang-bg: #4d3f6f;
+  --skill-frame-bg: #2b5a6b;
+  --skill-app-color: #d497b8;
 }
 
 [data-theme='light'] {
