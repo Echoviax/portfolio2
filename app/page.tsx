@@ -11,7 +11,6 @@ export default function Page() {
   return (
     <main id="main">
       <section id="about" tabIndex={-1}>
-        <h1>About</h1>
         <AboutPage />
       </section>
 

@@ -75,3 +75,11 @@
 .footer-btn:hover, .footer-btn:focus-visible {
     transform: scale(1.1);
 }
+
+@media (max-width: 800px) {
+    .nav-sidebar {
+        display: none;
+        visibility: hidden;
+        width: 0px;
+    }
+}

@@ -6,3 +6,10 @@ main {
     flex-direction: column;
     gap: 100vh;
 }
+
+@media (max-width: 800px) {
+    main {
+        width: 100%;
+        left: 0px;
+    }
+}
