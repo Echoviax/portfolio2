@@ -6,7 +6,12 @@ export default function SidebarButton({text, link}: {text: string, link: string}
         className="nav-button"
         onClick={(e) => {
             e.preventDefault();
-            document.getElementById(`${link}`)?.focus();
+            
+            const target = document.getElementById(link);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+                target.focus({ preventScroll: true }); 
+            }
         }}
     >
         {text}

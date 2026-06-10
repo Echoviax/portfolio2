@@ -10,24 +10,24 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <main id="main">
-      <section id="about">
+      <section id="about" tabIndex={-1}>
         <h1>About</h1>
         <AboutPage />
       </section>
 
-      <section id="featured">
+      <section id="featured" tabIndex={-1}>
         <h1>Featured</h1>
       </section>
 
-      <section id="projects">
+      <section id="projects" tabIndex={-1}>
         <h1>Projects</h1>
       </section>
 
-      <section id="gallery">
+      <section id="gallery" tabIndex={-1}>
         <h1>Gallery</h1>
       </section>
 
-      <section id="ai">
+      <section id="ai" tabIndex={-1}>
         <h1>Non-AI Policy</h1>
         <AIPage />
       </section>
