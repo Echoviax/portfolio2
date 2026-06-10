@@ -2,7 +2,7 @@
 
 export default function SidebarButton({text, link}: {text: string, link: string}) {
     return (<a
-        href={`#${{link}}`}
+        href={`#${link}`}
         className="nav-button"
         onClick={(e) => {
             e.preventDefault();
