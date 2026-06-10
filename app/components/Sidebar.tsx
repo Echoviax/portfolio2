@@ -6,6 +6,7 @@ import { faEnvelope, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import SidebarLink from "./SidebarLink";
+import SkipLink from "./SkipLink";
 
 export default function Sidebar() {
     const [theme, setTheme] = useState("dark");
@@ -33,6 +34,7 @@ export default function Sidebar() {
 
     return (
         <nav className="nav-sidebar">
+            <SkipLink />
             <section className="theme-btn-parent">
                 <button className="theme-btn" onClick={toggleTheme}>
                     <FontAwesomeIcon icon={theme === "dark" ? faMoon : faSun} className="w-5 h-5" />
@@ -43,7 +45,7 @@ export default function Sidebar() {
                 <SidebarButton link={"about"} text="About" />
                 <SidebarButton link={"featured"} text="Featured" />
                 <SidebarButton link={"projects"} text="Projects" />
-                <SidebarButton link={"gallery"} text="Gallery" />
+                {/* <SidebarButton link={"gallery"} text="Gallery" /> */}
                 <SidebarButton link={"ai"} text="Non-AI Policy" />
             </section>
             <section className="nav-footer">

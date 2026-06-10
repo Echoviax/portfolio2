@@ -23,9 +23,9 @@ export default function Page() {
         <h1>Projects</h1>
       </section>
 
-      <section id="gallery" tabIndex={-1}>
+      {/* <section id="gallery" tabIndex={-1}>
         <h1>Gallery</h1>
-      </section>
+      </section> */}
 
       <section id="ai" tabIndex={-1}>
         <h1>Non-AI Policy</h1>
