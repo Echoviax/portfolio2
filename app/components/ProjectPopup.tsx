@@ -30,7 +30,9 @@ export default function ProjectPopup({project, closeFunction}: {
                 </div>
                 
                 {/* Image */}
-                <div className="popup-image"></div>
+                <div className="popup-image">
+                    {project.imagePath ? <img src={`/images/projects/${project.imagePath}/image1.png`} alt="banner" /> : null}
+                </div>
                 
                 {/* Links */}
                 <div className="popup-links">
