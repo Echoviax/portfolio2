@@ -121,6 +121,8 @@
     border-radius: 12px;
     max-width: 1000px;
     width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 .popup-title {
@@ -129,6 +131,10 @@
     border-bottom: 2px solid var(--neutral-gray);
     margin-bottom: 10px;
     padding-left: 0.25rem;
+    position: sticky;
+    top: -40px;
+    background-color: var(--popup-color);
+    z-index: 10;
 }
 
 .popup-title > h2 {
@@ -295,6 +301,10 @@
 @media screen and (max-width: 1000px) {
     .project-popup {
         padding-left: 0px;
+    }
+
+    .popup-title {
+        top: -20px;
     }
 
     .popup-content {

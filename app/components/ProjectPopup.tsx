@@ -9,14 +9,20 @@ export default function ProjectPopup({project, closeFunction}: {
     closeFunction: () => void
 }) {
     useEffect(() => {
+        document.body.style.overflow = 'hidden';
+
         const close = (e: KeyboardEvent) => {
             if (e.key === 'Escape')
                 closeFunction();
         }
 
         window.addEventListener('keydown', close)
-        return () => window.removeEventListener('keydown', close)
-    },[])
+        
+        return () => {
+            window.removeEventListener('keydown', close);
+            document.body.style.overflow = ''; 
+        }
+    }, [closeFunction])
     
     return (
         <div aria-modal="true" className="project-popup" onClick={closeFunction}>
