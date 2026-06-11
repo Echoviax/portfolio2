@@ -1,11 +1,13 @@
 import { Project } from "../types/Project";
 
 export default function ProjectCard({ project, onClick }: { project: Project; onClick: () => void }) {
+    const titleId = `project-title-${project.id}`
+
     return (
         <div
             role="button"
             tabIndex={0}
-            aria-label={`View details for ${project.title}`}
+            aria-labelledby={titleId}
             onClick={onClick}
             // Keyboard accessibility
             onKeyDown={(e) => {
@@ -16,7 +18,7 @@ export default function ProjectCard({ project, onClick }: { project: Project; on
             }}
             className="project-card"
         >
-            <h3>{project.title}</h3>
+            <h3 id={titleId}>{project.title}</h3>
             <p>Click to expand</p>
         </div>
     );

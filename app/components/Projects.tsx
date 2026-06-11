@@ -56,17 +56,17 @@ export default function ProjectsPage() {
             <div ref={scrollContainerRef} className="hide-scroll project-content">
                 <div className="project-grid">
                     <div className="project-column">
-                        <div className="project-row">
+                        <div className="project-row" style={{animationDelay: "0.1s"}}>
                             {row1.map((project) => (
                                 <ProjectCard key={`r1-${project.id}`} project={project} onClick={() => setSelectedProject(project)} />
                             ))}
                         </div>
-                        <div className="project-row" style={{paddingLeft: "160px"}}>
+                        <div className="project-row" style={{paddingLeft: "160px", animationDelay: "0.2s"}}>
                             {row2.map((project) => (
                                 <ProjectCard key={`r2-${project.id}`} project={project} onClick={() => setSelectedProject(project)} />
                             ))}
                         </div>
-                        <div className="project-row">
+                        <div className="project-row" style={{animationDelay: "0.3s"}}>
                             {row3.map((project) => (
                                 <ProjectCard key={`r3-${project.id}`} project={project} onClick={() => setSelectedProject(project)} />
                             ))}

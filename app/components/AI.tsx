@@ -30,7 +30,7 @@ export default function AIPage() {
                     <h2>Other</h2>
                     <ul>
                         <li><a href="https://www.tumblr.com/dreaminginthedeepsouth/817865966907228160/darren-oconnor-timnit-gebru-was-fired-from">Timnit Gebru's Story</a></li>
-                        <li><a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/mystery-company-accidentally-blew-usd500-million-on-claude-in-a-single-month-failed-to-put-usage-limit-on-licenses-for-employees">Companies accidentally spending way too much on AI (I just quite like this article)</a></li>
+                        <li><a href="https://cybersecuritynews.com/meta-trained-its-llama-ai-models-using-81-7-tb-of-books-stolen-from-torrent-shadow-libraries/">Meta Trained Its Llama AI Models Using 81.7 TB of Books Stolen From Torrent Shadow Libraries</a></li>
                     </ul>
                 </div>
             </div>
