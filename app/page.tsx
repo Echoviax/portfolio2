@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import AIPage from "./components/AI";
 import AboutPage from "./components/About";
+import ProjectsPage from "./components/Projects";
 
 export const metadata: Metadata = {
   title: "Home | Shards of Space",
@@ -21,6 +22,10 @@ export default function Page() {
 
       <section id="projects" tabIndex={-1}>
         <h1>Projects</h1>
+        {/* Masonry will go here... I'm thinking it should be awfully wide and 2-3 projects tall */}
+        {/* Like scroll off the screen and loop like one of those image presenters on websites */}
+        {/* Each project can be clicked to open a popup with more info on it... */}
+        <ProjectsPage />
       </section>
 
       {/* <section id="gallery" tabIndex={-1}>

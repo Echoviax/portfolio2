@@ -1,0 +1,90 @@
+.project-scroller {
+    width: 100%;
+    padding: 20px 0;
+    position: relative;
+}
+
+.project-controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.project-controls > button {
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 8px;
+    background-color: var(--panel-color);
+    border: none;
+}
+
+.project-content {
+    overflow-x: auto;
+    width: 100%;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.project-grid {
+    display: flex;
+    width: max-content;
+}
+
+.project-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project-row {
+    display: flex;
+    gap: 20px;
+}
+
+.project-card {
+    width: 300px;
+    height: 200px;
+    flex-shrink: 0;
+    background-color: var(--panel-color);
+    padding: 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.project-card:hover {
+    background-color: var(--hover-color);
+}
+
+.project-card > p {
+    font-size: 0.8rem;
+    opacity: 0.75;
+}
+
+.project-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--popup-background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.popup-content {
+    background-color: var(--popup-color);
+    padding: 40px;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 90%;
+}
+
+.popup-content > button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+}

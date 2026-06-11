@@ -1,6 +1,7 @@
 export default function AIPage() {
     return (
         <div id="ai-page">
+            <p style={{fontStyle: "italic", opacity: "0.75", fontSize: "0.95rem", marginBottom: "5px"}}>"Radium is the next big thing. If you aren't putting it in your water and toothpaste, you'll be left behind!"</p>
             <p>No generative AI (hereinafter referred to as AI) was used to assist in or completely generate any parts of this website or any projects on it.</p>
             <p>Due to — but not limited to — reasons like these</p>
             <div id="ai-content">
@@ -29,7 +30,7 @@ export default function AIPage() {
                     <h2>Other</h2>
                     <ul>
                         <li><a href="https://www.tumblr.com/dreaminginthedeepsouth/817865966907228160/darren-oconnor-timnit-gebru-was-fired-from">Timnit Gebru's Story</a></li>
-                        <li><a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/mystery-company-accidentally-blew-usd500-million-on-claude-in-a-single-month-failed-to-put-usage-limit-on-licenses-for-employees">Companies accidentally spending way too much on AI</a></li>
+                        <li><a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/mystery-company-accidentally-blew-usd500-million-on-claude-in-a-single-month-failed-to-put-usage-limit-on-licenses-for-employees">Companies accidentally spending way too much on AI (I just quite like this article)</a></li>
                     </ul>
                 </div>
             </div>

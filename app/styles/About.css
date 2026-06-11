@@ -41,18 +41,18 @@
 }
 
 .skill-language {
-    background-color: var(--skill-lang-bg);
+    background-color: var(--tag-one);
     border-radius: 32px;
 }
 
 .skill-framework {
-    background-color: var(--skill-frame-bg);
+    background-color: var(--tag-two);
     border-radius: 8px;
 }
 
 .skill-app {
     background-color: transparent;
-    border: 2px solid var(--skill-app-color);
+    border: 2px solid var(--tag-three);
     color: var(--main-text);
     border-radius: 32px;
 }

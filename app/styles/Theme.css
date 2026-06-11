@@ -7,10 +7,12 @@
   --main-text: white;
   --invert-text: black;
   --neutral-gray: #9d9d9d;
+  --popup-color: #222;
+  --popup-background: #000A;
 
-  --skill-lang-bg: #4d3f6f;
-  --skill-frame-bg: #2b5a6b;
-  --skill-app-color: #d497b8;
+  --tag-one: #4d3f6f;
+  --tag-two: #2b5a6b;
+  --tag-three: #d497b8;
 }
 
 [data-theme='light'] {
