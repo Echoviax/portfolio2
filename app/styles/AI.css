@@ -14,8 +14,7 @@
     width: 100%;
     border-radius: 16px;
     padding: 24px 32px;
-    /* This rule doesn't actually do anything since the background is black... */
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 8px 32px var(--shadow-color); 
 
     opacity: 0;
     animation: fadeInUp 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
@@ -26,7 +25,7 @@
     text-transform: uppercase;
     font-size: 1.25rem;
     color: var(--outline-color);
-    border-bottom: 2px solid var(--hover-color);
+    border-bottom: 2px solid var(--neutral-gray);
     letter-spacing: 0.1rem;
     margin-bottom: 16px;
     padding-bottom: 8px;
