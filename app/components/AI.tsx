@@ -16,6 +16,7 @@ export default function AIPage() {
                     <h2>Mortality</h2>
                     <ul>
                         <li><a href="https://aimortality.org/">Website that tracks deaths associated with AI</a></li>
+                        <li><a href="https://en.wikipedia.org/wiki/Deaths_linked_to_chatbots">Deaths linked to chatbots - Wikipedia</a></li>
                     </ul>
                 </div>
                 <div className="ai-box">
