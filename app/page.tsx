@@ -5,8 +5,8 @@ import ProjectsPage from "./components/Projects";
 import FeaturedPage from "./components/Featured";
 
 export const metadata: Metadata = {
-  title: "Home | Shards of Space",
-  description: "The home page...",
+  title: "Portfolio | Shards of Space",
+  description: "Luna Berl's portfolio",
 };
 
 export default function Page() {
