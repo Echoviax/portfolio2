@@ -232,6 +232,11 @@
     border-radius: 32px;
 }
 
+.category-dev {
+    background-color: var(--tag-four);
+    border-radius: 0px;
+}
+
 .category-webdes {
     background-color: transparent;
     border: 2px dotted var(--tag-four);
