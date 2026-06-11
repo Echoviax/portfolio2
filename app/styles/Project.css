@@ -73,18 +73,131 @@
     justify-content: center;
     align-items: center;
     z-index: 9999;
+
+    padding-left: 235px; 
+    box-sizing: border-box;
 }
 
 .popup-content {
     background-color: var(--popup-color);
-    padding: 40px;
+    padding: 40px 40px 20px 40px;
     border-radius: 12px;
-    max-width: 500px;
+    max-width: 1000px;
     width: 90%;
 }
 
-.popup-content > button {
-    margin-top: 20px;
-    padding: 10px 20px;
+.popup-title {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--hover-color);
+    margin-bottom: 10px;
+    padding-left: 0.25rem;
+}
+
+.popup-title > h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--outline-color);
+}
+
+.popup-title > button {
+    border-radius: 32px;
+    background-color: var(--panel-color);
+    height: 35px;
+    width: 35px;
+    font-weight: bolder;
     cursor: pointer;
+}
+
+.popup-title > button:hover {
+    background-color: var(--hover-color);
+}
+
+.popup-content > p {
+    padding-left: 0.25rem;
+}
+
+.popup-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 12px;
+    background-color: var(--hover-color);
+}
+
+.popup-links {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    padding-left: 0.25rem;
+    margin-top: 6px;
+}
+
+.popup-links > a {
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+    align-items: center;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    color: var(--link-color);
+}
+
+.popup-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 10px 2px;
+}
+
+.category-tag {
+    padding: 8px 18px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: default;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.category-webdev {
+    background-color: var(--tag-one);
+    border-radius: 32px;
+}
+
+.category-gamedev {
+    background-color: var(--tag-two);
+    border-radius: 8px;
+}
+
+.category-gamedes {
+    background-color: transparent;
+    border: 2px solid var(--tag-three);
+    color: var(--main-text);
+    border-radius: 32px;
+}
+
+.category-webdes {
+    background-color: transparent;
+    border: 2px dotted var(--tag-four);
+    color: var(--main-text);
+    border-radius: 32px;
+}
+
+.project-dates {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 0.8rem;
+    font-style: italic;
+    opacity: 0.8;
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 800px) {
+    .project-popup {
+        padding-left: 0px;
+    }
+
+    .popup-content {
+        padding: 20px 20px 10px 20px;
+    }
 }

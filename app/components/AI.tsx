@@ -2,7 +2,7 @@ export default function AIPage() {
     return (
         <div id="ai-page">
             <p style={{fontStyle: "italic", opacity: "0.75", fontSize: "0.95rem", marginBottom: "5px"}}>"Radium is the next big thing. If you aren't putting it in your water and toothpaste, you'll be left behind!"</p>
-            <p>No generative AI (hereinafter referred to as AI) was used to assist in or completely generate any parts of this website or any projects on it.</p>
+            <p>No LLMs (hereinafter referred to as AI) were used to assist in or completely generate any parts of this website or any projects on it.</p>
             <p>Due to — but not limited to — reasons like these</p>
             <div id="ai-content">
                 <div className="ai-box">

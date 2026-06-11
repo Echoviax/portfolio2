@@ -8,7 +8,13 @@ import ProjectPopup from "./ProjectPopup";
 const allProjects: Project[] = Array.from({ length: 18 }, (_, i) => ({
     id: i,
     title: `Project ${i + 1}`,
-    description: "A cool project",
+    description: "This was a really cool project that I loved getting the opportunity to work on. Lorem ipsum dolor sit amet and such...",
+    links: [
+        {href: "https://GitHub.com", text: "GitHub", newTab: true}, 
+        {href: "https://linked.in", text: "LinkedIn", newTab: false}
+    ],
+    categories: ['webdes', 'gamedes', 'gamedev', 'webdev'],
+    dates: "March 2024 - Current"
 }));
 
 
@@ -32,7 +38,7 @@ export default function ProjectsPage() {
 
     const scroll = (direction: "left" | "right") => {
         if (scrollContainerRef.current) {
-            const scrollAmount = 640;
+            const scrollAmount = 320;
             scrollContainerRef.current.scrollBy({
                 left: direction === "left" ? -scrollAmount : scrollAmount,
                 behavior: "smooth",
@@ -70,7 +76,7 @@ export default function ProjectsPage() {
             </div>
 
             {selectedProject && (
-                <ProjectPopup project={selectedProject} closeFunction={() => setSelectedProject(null)} />
+                <ProjectPopup project={selectedProject} categories={selectedProject.categories} links={selectedProject.links} closeFunction={() => setSelectedProject(null)} />
             )}
         </div>
     );

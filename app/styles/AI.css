@@ -35,6 +35,7 @@
 .ai-box a {
     text-decoration: underline;
     text-underline-offset: 2px;
+    color: var(--link-color)
 }
 
 .ai-box li {
