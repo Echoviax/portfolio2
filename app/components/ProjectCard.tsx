@@ -1,7 +1,8 @@
+import React from "react";
 import { Project } from "../types/Project";
-import { MiniCategoryTag, ProjectCategory } from "./ProjectCategory";
+import CategoryTag, { MiniCategoryTag, ProjectCategory } from "./ProjectCategory";
 
-export default function ProjectCard({ project, onClick }: { project: Project; onClick: () => void }) {
+export default function ProjectCard({ project, onClick, big }: { project: Project; onClick: () => void; big?: boolean; }) {
     const titleId = `project-title-${project.id}`
 
     return (
@@ -17,15 +18,19 @@ export default function ProjectCard({ project, onClick }: { project: Project; on
                     onClick();
                 }
             }}
-            className="project-card"
+            className={big ? "project-card-big" : "project-card"}
         >
             {project.imagePath ? <img src={`/images/projects/${project.imagePath}/image1.png`} alt="banner" /> : null}
             <div className="card-header">
                 <h3 id={titleId}>{project.title}</h3>
                 <div className="project-card-tags">
-                    {project.categories && project.categories.map((c: ProjectCategory, i) => (
-                        <MiniCategoryTag category={c} key={i} />
-                    ))}
+                    {project.categories && project.categories.map((c: ProjectCategory, i) => {
+                        const largeTags = big ?? false;
+
+                        return (<React.Fragment key={i}>
+                            {largeTags ? <CategoryTag category={c} /> : <MiniCategoryTag category={c} /> }
+                        </React.Fragment>);
+                    })}
                 </div>
             </div>
         </div>

@@ -64,7 +64,20 @@
     overflow: hidden;
 }
 
-.project-card > img {
+.project-card-big {
+    aspect-ratio: 16/9;
+    flex-shrink: 0;
+    background-color: var(--panel-color);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    box-shadow: 0px 8px 24px var(--shadow-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card > img,
+.project-card-big > img {
     position: absolute;
     z-index: -100;
     top: 50%;
@@ -75,11 +88,13 @@
     object-fit: cover;
 }
 
-.project-card:hover {
+.project-card:hover,
+.project-card-big:hover {
     background-color: var(--hover-color);
 }
 
-.project-card > p {
+.project-card > p,
+.project-card-big > p {
     font-size: 0.8rem;
     opacity: 0.75;
 }
@@ -186,6 +201,11 @@
     background-color: var(--popup-background);
     padding: 10px 20px;
     border-radius: 12px 12px 0 0;
+}
+
+.project-card-big h3 {
+    font-size: 1.75rem;
+    font-weight: 500;
 }
 
 .project-card-tags {

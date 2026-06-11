@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import AIPage from "./components/AI";
 import AboutPage from "./components/About";
 import ProjectsPage from "./components/Projects";
+import FeaturedPage from "./components/Featured";
 
 export const metadata: Metadata = {
   title: "Home | Shards of Space",
@@ -18,6 +19,7 @@ export default function Page() {
 
       <section id="featured" tabIndex={-1}>
         <h1>Featured</h1>
+        <FeaturedPage />
       </section>
 
       <section id="projects" tabIndex={-1}>
