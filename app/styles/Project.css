@@ -52,8 +52,8 @@
 }
 
 .project-card {
-    width: 300px;
-    height: 200px;
+    width: 450px;
+    height: 300px;
     flex-shrink: 0;
     background-color: var(--panel-color);
     border-radius: 12px;
@@ -213,6 +213,11 @@
     border-radius: 12px 12px 0 0;
 }
 
+.project-card h3 {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
 .project-card-big h3 {
     font-size: 1.75rem;
     font-weight: 500;
@@ -221,8 +226,8 @@
 .project-card-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 2px;
-    margin: 5px 0px;
+    gap: 8px;
+    margin: 5px 5px 5px 0px;
 }
 
 .category-tag {
@@ -236,13 +241,12 @@
 }
 
 .mini-category-tag {
-    padding: 4px 9px;
-    font-size: 0.5rem;
+    padding: 6px 12px;
+    font-size: 0.75rem;
     font-weight: 400;
     cursor: default;
     display: flex;
     align-items: center;
-    gap: 4px;
 }
 
 .category-webdev {
@@ -288,12 +292,33 @@
     margin-top: 20px;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
     .project-popup {
         padding-left: 0px;
     }
 
     .popup-content {
         padding: 20px 20px 10px 20px;
+    }
+
+    .project-card {
+        width: 300px;
+        height: 200px;
+    }
+
+    .mini-category-tag {
+        padding: 4px 9px;
+        font-size: 0.6rem;
+        gap: 4px;
+    }
+
+    .project-card-tags {
+        gap: 4px;
+        margin: 5px 5px 5px 0px;
+    }
+
+    .project-card h3 {
+        font-size: 1rem;
+        font-weight: 400;
     }
 }

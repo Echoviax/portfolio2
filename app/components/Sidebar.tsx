@@ -60,7 +60,7 @@ export default function Sidebar() {
                     alt="Email" 
                 />
                 <SidebarLink 
-                    link="https://linkedin.in/luna-berl" 
+                    link="https://linked.in/in/luna-berl" 
                     icon={faLinkedin} 
                     alt="LinkedIn"
                 />

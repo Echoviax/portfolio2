@@ -76,7 +76,7 @@
     transform: scale(1.1);
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
     .nav-sidebar {
         display: none;
         visibility: hidden;
