@@ -10,11 +10,11 @@
 :root {
   --background: #0a0a0a;
   --foreground: #ededed;
+  font-family: "Geist", Verdana, Geneva, Tahoma, sans-serif;
 }
 
 body {
   background: var(--background);
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 *:focus-visible {

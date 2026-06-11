@@ -8,4 +8,5 @@ export type Project = {
     links?: Link[];
     categories?: ProjectCategory[];
     dates?: string;
+    imagePath?: string;
 };

@@ -14,7 +14,8 @@ const allProjects: Project[] = Array.from({ length: 18 }, (_, i) => ({
         {href: "https://linked.in", text: "LinkedIn", newTab: false}
     ],
     categories: ['webdes', 'gamedes', 'gamedev', 'webdev'],
-    dates: "March 2024 - Current"
+    dates: "March 2024 - Current",
+    imagePath: "placeholder"
 }));
 
 

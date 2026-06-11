@@ -19,6 +19,7 @@ export default function ProjectCard({ project, onClick }: { project: Project; on
             }}
             className="project-card"
         >
+            <img src={`/images/projects/${project.imagePath}/image1.png`} alt="banner" />
             <div className="card-header">
                 <h3 id={titleId}>{project.title}</h3>
                 <div className="project-card-tags">
