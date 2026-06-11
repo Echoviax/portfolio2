@@ -4,10 +4,8 @@ import LinkComponent from "./LinkComponent";
 import { useEffect } from "react";
 import CategoryTag, { ProjectCategory } from "./ProjectCategory";
 
-export default function ProjectPopup({project, links, categories, closeFunction}: {
+export default function ProjectPopup({project, closeFunction}: {
     project: Project, 
-    links?: Link[], 
-    categories?: ProjectCategory[],
     closeFunction: () => void
 }) {
     useEffect(() => {
@@ -36,14 +34,14 @@ export default function ProjectPopup({project, links, categories, closeFunction}
                 
                 {/* Links */}
                 <div className="popup-links">
-                    {links && links.map((l: Link) => (
+                    {project.links && project.links.map((l: Link) => (
                         <LinkComponent link={l} key={l.href} />
                     ))}
                 </div>
                 
                 {/* Tags */}
                 <div className="popup-tags">
-                    {categories && categories.map((c: ProjectCategory, i) => (
+                    {project.categories && project.categories.map((c: ProjectCategory, i) => (
                         <CategoryTag category={c} key={i} />
                     ))}
                 </div>

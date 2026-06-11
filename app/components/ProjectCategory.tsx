@@ -10,3 +10,13 @@ export default function CategoryTag({ category }: {
         </div>
     );
 }
+
+export function MiniCategoryTag({ category }: {
+    category: ProjectCategory;
+}) {
+    return (
+        <div className={`mini-category-tag category-${category}`}>
+            {CategoryToName[category]}
+        </div>
+    );
+}

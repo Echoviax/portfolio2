@@ -1,4 +1,5 @@
 import { Project } from "../types/Project";
+import { MiniCategoryTag, ProjectCategory } from "./ProjectCategory";
 
 export default function ProjectCard({ project, onClick }: { project: Project; onClick: () => void }) {
     const titleId = `project-title-${project.id}`
@@ -18,8 +19,14 @@ export default function ProjectCard({ project, onClick }: { project: Project; on
             }}
             className="project-card"
         >
-            <h3 id={titleId}>{project.title}</h3>
-            <p>Click to expand</p>
+            <div className="card-header">
+                <h3 id={titleId}>{project.title}</h3>
+                <div className="project-card-tags">
+                    {project.categories && project.categories.map((c: ProjectCategory, i) => (
+                        <MiniCategoryTag category={c} key={i} />
+                    ))}
+                </div>
+            </div>
         </div>
     );
 };

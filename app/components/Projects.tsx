@@ -49,8 +49,11 @@ export default function ProjectsPage() {
     return (
         <div className="project-scroller">
             <div className="project-controls">
-                <button onClick={() => scroll("left")} aria-label="Scroll left">←</button>
-                <button onClick={() => scroll("right")} aria-label="Scroll right">→</button>
+                <p>Click on any project to view more details</p>
+                <div className="project-control-buttons">
+                    <button onClick={() => scroll("left")} aria-label="Scroll left">←</button>
+                    <button onClick={() => scroll("right")} aria-label="Scroll right">→</button>
+                </div>
             </div>
 
             <div ref={scrollContainerRef} className="hide-scroll project-content">
@@ -76,7 +79,7 @@ export default function ProjectsPage() {
             </div>
 
             {selectedProject && (
-                <ProjectPopup project={selectedProject} categories={selectedProject.categories} links={selectedProject.links} closeFunction={() => setSelectedProject(null)} />
+                <ProjectPopup project={selectedProject} closeFunction={() => setSelectedProject(null)} />
             )}
         </div>
     );

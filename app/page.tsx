@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <main id="main">
+    <main id="main" tabIndex={-1}>
       <section id="about" tabIndex={-1}>
         <h1>About Me</h1>
         <AboutPage />
