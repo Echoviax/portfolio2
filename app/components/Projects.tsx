@@ -18,8 +18,6 @@ const allProjects: Project[] = Array.from({ length: 18 }, (_, i) => ({
     imagePath: "placeholder"
 }));
 
-
-// 0 is evenly divisible by 3
 let row1: Project[] = [];
 let row2: Project[] = [];
 let row3: Project[] = [];
