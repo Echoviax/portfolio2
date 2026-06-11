@@ -49,7 +49,7 @@ export default function ProjectPopup({project, closeFunction}: {
                 </div>
 
                 {/* Description */}
-                <p>{project.description}</p>
+                <div dangerouslySetInnerHTML={{__html: project.description}} className="popup-description" />
 
                 {/* Dates */}
                 <div className="project-dates">
