@@ -14,7 +14,7 @@ export default function AboutPage() {
             </div>
             <div className="about-cell" id="about-skills">
                 <h2>Skills</h2>
-                {/* These'll eventually be color/shape coded and have an indicator of proficiency */}
+
                 <div id="about-skill-parent">
                     {/* Programming languages */}
                     <SkillCell name="HTML/CSS" category="language" level={3} />
@@ -33,6 +33,10 @@ export default function AboutPage() {
                     <SkillCell name="Figma" category="app" level={2} />
                     <SkillCell name="Github" category="app" level={2} />
                     <SkillCell name="Unity" category="app" level={2} />
+                </div>
+
+                <div className="skill-footer">
+                    <p>The dots indicate proficiency, from 1-3</p>
                 </div>
             </div>
             <div className="about-cell" id="about-about">

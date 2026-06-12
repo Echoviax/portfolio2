@@ -79,7 +79,19 @@
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
-    overflow-y: scroll;
+    overflow-y: auto;
+    flex-grow: 1;
+    padding-bottom: 6px;
+    align-content: flex-start;
+}
+
+.skill-footer {
+    display: flex;
+    justify-content: flex-end;
+    font-style: italic;
+    opacity: 0.75;
+    font-size: 0.8rem;
+    margin-top: auto;
 }
 
 #about-image {
@@ -99,7 +111,9 @@
 
 #about-skills {
     grid-area: skills;
-    
+    display: flex;
+    flex-direction: column;
+
     animation-delay: 0.1s;
 }
 
