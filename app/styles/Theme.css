@@ -1,6 +1,7 @@
 :root {
   --bg-color: #fff;
   --primary-color: #d8cfef;
+  --trans-primary-color: #d8cfef66;
   --outline-color: #8a6cd5;
   --panel-color: #ababab50;
   --hover-color: #00000024;
@@ -21,6 +22,7 @@
 .dark {
   --bg-color: #0e0e0e;
   --primary-color: #4d3f6f;
+  --trans-primary-color: #4d3f6f66;
   --outline-color: #a897d4;
   --panel-color: #93939350;
   --hover-color: #ffffff24;

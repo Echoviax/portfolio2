@@ -30,8 +30,8 @@ export default function Sidebar() {
                     </button>
                 ) : (
                     <button className="theme-btn" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
-                        <FontAwesomeIcon icon={theme === "dark" ? faMoon : faSun} className="w-5 h-5" />
-                        Toggle Theme
+                        <FontAwesomeIcon icon={theme === "dark" ? faSun : faMoon} className="w-5 h-5" />
+                        {theme === "dark" ? "Light Mode" : "Dark Mode"}
                     </button>
                 )}
                 <button className="theme-btn" onClick={toggleShader}>
