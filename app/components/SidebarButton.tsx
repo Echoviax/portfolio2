@@ -1,9 +1,9 @@
 'use client';
 
-export default function SidebarButton({text, link}: {text: string, link: string}) {
+export default function SidebarButton({text, link, mobile}: {text: string, link: string, mobile?: boolean}) {
     return (<a
         href={`#${link}`}
-        className="nav-button"
+        className={mobile ? "nav-button-mobile" : "nav-button"}
         onClick={(e) => {
             e.preventDefault();
             

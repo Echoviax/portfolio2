@@ -1,7 +1,7 @@
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default function SidebarLink({link, icon, alt}: {link: string, icon: IconDefinition, alt: string}) {
+export default function SidebarLink({link, icon, alt, mobile}: {link: string, icon: IconDefinition, alt: string, mobile?: boolean}) {
     const accessibleLabel = `${alt} (opens in a new tab)`;
     
     return (
@@ -9,12 +9,12 @@ export default function SidebarLink({link, icon, alt}: {link: string, icon: Icon
             href={link} 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="footer-btn" 
+            className={mobile ? "footer-btn-mobile" : "footer-btn"} 
             aria-label={accessibleLabel}
         >
             <FontAwesomeIcon 
                 icon={icon} 
-                className="footer-btn"
+                className={mobile ? "footer-btn-mobile" : "footer-btn"} 
                 aria-hidden={true}
             />
         </a>
