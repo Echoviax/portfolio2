@@ -159,6 +159,7 @@
     padding: 8px 12px;
     font-size: 1rem;
     border-radius: 32px;
+    transition: background-color 0.25s, font-weight 0.25s;
 }
 
 .mobile-links {
@@ -233,6 +234,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    transition: background-color 0.25s, font-weight 0.25s;
 }
 
 @media (max-width: 1000px) {

@@ -49,8 +49,8 @@ export default function MobileNav() {
             <div className={`mobile-theme-parent ${menuOpen ? "open" : ""}`}>
                 {mounted ?
                     <button className="theme-btn-mobile" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
-                        <FontAwesomeIcon icon={theme === "dark" ? faMoon : faSun} className="w-5 h-5" />
-                        Toggle Theme
+                        <FontAwesomeIcon icon={theme === "dark" ? faSun : faMoon} className="w-5 h-5" />
+                        {theme === "dark" ? "Light Mode" : "Dark Mode"}
                     </button>    :
                     <button className="theme-btn-mobile invisible">
                         <FontAwesomeIcon icon={faSun} className="w-5 h-5" />
@@ -90,7 +90,7 @@ export default function MobileNav() {
                 <SidebarButton link={"featured"} text="Featured" mobile />
                 <SidebarButton link={"projects"} text="Projects" mobile />
                 {/* <SidebarButton link={"gallery"} text="Gallery" mobile /> */}
-                <SidebarButton link={"ai"} text="Non-AI Policy" mobile />
+                <SidebarButton link={"ai"} text="GenAI Policy" mobile />
             </div>
         </nav>
     );
