@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import SidebarButton from "./SidebarButton";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
@@ -10,7 +10,26 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default function MobileNav() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [theme, setTheme] = useState("dark");
+
+    const navRef = useRef<HTMLElement | null>(null);
     
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent | TouchEvent) => {
+            if (navRef.current && !navRef.current.contains(event.target as Node))
+                setMenuOpen(false);
+        };
+
+        if (menuOpen) {
+            document.addEventListener("mousedown", handleClickOutside);
+            document.addEventListener("touchstart", handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+            document.removeEventListener("touchstart", handleClickOutside);
+        };
+    }, [menuOpen]);
+
     useEffect(() => {
         const savedTheme = localStorage.getItem("theme") || "dark";
         setTheme(savedTheme);
@@ -33,7 +52,7 @@ export default function MobileNav() {
     };
 
     return (
-        <nav aria-hidden="true" className="mobile-nav-container">
+        <nav ref={navRef} aria-hidden="true" className="mobile-nav-container">
             <button onClick={() => setMenuOpen(!menuOpen)} className="mobileNav">
                 <div></div>
                 <div></div>
