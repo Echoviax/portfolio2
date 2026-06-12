@@ -30,11 +30,18 @@
     transition: background-color 0.25s;
 }
 
-.nav-button:hover, .theme-btn:hover, .nav-button-mobile:hover, .nav-button-mobile:active {
+.nav-button:hover, 
+.theme-btn:hover, 
+.nav-button-mobile:hover, 
+.nav-button-mobile:active,
+.theme-btn-mobile:hover,
+.theme-btn-mobile:active {
     background-color: var(--hover-color);
 }
 
-.nav-button:focus-visible, .theme-btn:focus-visible, .nav-button-mobile:focus-visible {
+.nav-button:focus-visible, 
+.theme-btn:focus-visible, 
+.nav-button-mobile:focus-visible {
     background-color: var(--hover-color);
 } 
 
@@ -83,7 +90,8 @@
 .mobile-nav-container,
 .mobileNav, 
 .mobile-page-nav, 
-.mobile-links {
+.mobile-links,
+.mobile-theme-parent {
     display: none; 
 }
 
@@ -122,7 +130,7 @@
     z-index: 100;
     align-items: center;
     justify-content: center;
-    width: 150px;
+    width: 170px;
     padding: 10px 0;
 
     visibility: hidden;
@@ -177,6 +185,45 @@
     transition: transform 0.25s;
 }
 
+.mobile-theme-parent {
+    position: fixed;
+    right: 16px;
+    bottom: 290px;
+    border-radius: 12px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+    z-index: 100;
+    width: 170px;
+    padding: 5px 0px;
+
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.2s ease-out, transform 0.2s ease-out, visibility 0.2s;
+    transition-delay: .1s;
+}
+
+.mobile-theme-parent.open {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.theme-btn-mobile {
+    width: 90%;
+    text-decoration: none;
+    text-align: left;
+    padding: 8px 12px;
+    font-size: 1rem;
+    border-radius: 32px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
 @media (max-width: 1000px) {
     .nav-sidebar {
         display: none;
@@ -187,7 +234,8 @@
     .mobile-nav-container,
     .mobileNav,
     .mobile-page-nav, 
-    .mobile-links {
+    .mobile-links,
+    .mobile-theme-parent {
         display: flex;
         visibility: visible;
     }

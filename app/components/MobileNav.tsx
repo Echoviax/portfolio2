@@ -1,14 +1,37 @@
 'use client';
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SidebarButton from "./SidebarButton";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import SidebarLink from "./SidebarLink";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function MobileNav() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [theme, setTheme] = useState("dark");
     
+    useEffect(() => {
+        const savedTheme = localStorage.getItem("theme") || "dark";
+        setTheme(savedTheme);
+        
+        if (savedTheme === "light")
+            document.documentElement.setAttribute("data-theme", "light");
+        else
+            document.documentElement.removeAttribute("data-theme");
+    }, []);
+
+    const toggleTheme = () => {
+        const newTheme = theme === "dark" ? "light" : "dark";
+        setTheme(newTheme);
+        
+        if (newTheme === "light")
+            document.documentElement.setAttribute("data-theme", "light");
+        else
+            document.documentElement.removeAttribute("data-theme");
+        localStorage.setItem("theme", newTheme);
+    };
+
     return (
         <nav aria-hidden="true" className="mobile-nav-container">
             <button onClick={() => setMenuOpen(!menuOpen)} className="mobileNav">
@@ -17,6 +40,13 @@ export default function MobileNav() {
                 <div></div>
             </button>
             
+            <div className={`mobile-theme-parent ${menuOpen ? "open" : ""}`}>
+                <button className="theme-btn-mobile" onClick={toggleTheme}>
+                    <FontAwesomeIcon icon={theme === "dark" ? faMoon : faSun} className="w-5 h-5" />
+                    Toggle Theme
+                </button>
+            </div>
+
             {/* Links */}
             <div className={`mobile-links ${menuOpen ? "open" : ""}`}>
                 <SidebarLink 
