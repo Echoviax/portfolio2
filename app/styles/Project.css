@@ -29,7 +29,7 @@
     width: 100%;
     opacity: 1;
     transition: opacity 0.3s ease;
-    padding: 0px 0px 20px 0px;
+    padding: 5px 0px 20px 0px;
     box-sizing: border-box;
 }
 
@@ -327,6 +327,7 @@
 
     .popup-title {
         top: -20px;
+        padding-top: 5px;
     }
 
     .popup-content {
