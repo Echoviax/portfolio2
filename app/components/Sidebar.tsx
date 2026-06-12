@@ -3,42 +3,39 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SidebarButton from "./SidebarButton";
 import { faEnvelope, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
-import { useEffect, useState } from "react";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import SidebarLink from "./SidebarLink";
 import SkipLink from "./SkipLink";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
+import { useShader } from "../context/ShaderContext";
 
 export default function Sidebar() {
-    const [theme, setTheme] = useState("dark");
+    const { theme, setTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+    const { isShaderActive, toggleShader } = useShader();
 
     useEffect(() => {
-        const savedTheme = localStorage.getItem("theme") || "dark";
-        setTheme(savedTheme);
-        
-        if (savedTheme === "light")
-            document.documentElement.setAttribute("data-theme", "light");
-        else
-            document.documentElement.removeAttribute("data-theme");
+        setMounted(true);
     }, []);
-
-    const toggleTheme = () => {
-        const newTheme = theme === "dark" ? "light" : "dark";
-        setTheme(newTheme);
-        
-        if (newTheme === "light")
-            document.documentElement.setAttribute("data-theme", "light");
-        else
-            document.documentElement.removeAttribute("data-theme");
-        localStorage.setItem("theme", newTheme);
-    };
 
     return (
         <nav className="nav-sidebar">
             <SkipLink />
             <section className="theme-btn-parent">
-                <button className="theme-btn" onClick={toggleTheme}>
-                    <FontAwesomeIcon icon={theme === "dark" ? faMoon : faSun} className="w-5 h-5" />
-                    Toggle Theme
+                {!mounted ? (
+                    <button className="theme-btn invisible">
+                        <FontAwesomeIcon icon={faSun} className="w-5 h-5" />
+                        Toggle Theme
+                    </button>
+                ) : (
+                    <button className="theme-btn" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
+                        <FontAwesomeIcon icon={theme === "dark" ? faMoon : faSun} className="w-5 h-5" />
+                        Toggle Theme
+                    </button>
+                )}
+                <button className="theme-btn" onClick={toggleShader}>
+                    {isShaderActive ? "Disable Effects" : "Enable Effects"}
                 </button>
             </section>
             <section className="nav-buttons">

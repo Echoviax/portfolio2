@@ -190,7 +190,7 @@
     right: 16px;
     bottom: 290px;
     border-radius: 12px;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: var(--primary-color);

@@ -6,10 +6,18 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import SidebarLink from "./SidebarLink";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useTheme } from "next-themes";
+import { useShader } from "../context/ShaderContext";
 
 export default function MobileNav() {
+    const { isShaderActive, toggleShader } = useShader();
     const [menuOpen, setMenuOpen] = useState(false);
-    const [theme, setTheme] = useState("dark");
+    const { theme, setTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
 
     const navRef = useRef<HTMLElement | null>(null);
     
@@ -30,27 +38,6 @@ export default function MobileNav() {
         };
     }, [menuOpen]);
 
-    useEffect(() => {
-        const savedTheme = localStorage.getItem("theme") || "dark";
-        setTheme(savedTheme);
-        
-        if (savedTheme === "light")
-            document.documentElement.setAttribute("data-theme", "light");
-        else
-            document.documentElement.removeAttribute("data-theme");
-    }, []);
-
-    const toggleTheme = () => {
-        const newTheme = theme === "dark" ? "light" : "dark";
-        setTheme(newTheme);
-        
-        if (newTheme === "light")
-            document.documentElement.setAttribute("data-theme", "light");
-        else
-            document.documentElement.removeAttribute("data-theme");
-        localStorage.setItem("theme", newTheme);
-    };
-
     return (
         <nav ref={navRef} aria-hidden="true" className="mobile-nav-container">
             <button onClick={() => setMenuOpen(!menuOpen)} className="mobileNav">
@@ -60,9 +47,18 @@ export default function MobileNav() {
             </button>
             
             <div className={`mobile-theme-parent ${menuOpen ? "open" : ""}`}>
-                <button className="theme-btn-mobile" onClick={toggleTheme}>
-                    <FontAwesomeIcon icon={theme === "dark" ? faMoon : faSun} className="w-5 h-5" />
-                    Toggle Theme
+                {mounted ?
+                    <button className="theme-btn-mobile" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
+                        <FontAwesomeIcon icon={theme === "dark" ? faMoon : faSun} className="w-5 h-5" />
+                        Toggle Theme
+                    </button>    :
+                    <button className="theme-btn-mobile invisible">
+                        <FontAwesomeIcon icon={faSun} className="w-5 h-5" />
+                        Toggle Theme
+                    </button> 
+                }
+                <button className="theme-btn-mobile" onClick={toggleShader}>
+                    {isShaderActive ? "Disable Effects" : "Enable Effects"}
                 </button>
             </div>
 
