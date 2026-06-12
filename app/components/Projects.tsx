@@ -169,7 +169,7 @@ const lfg: Project = {
     <p>This was my first ever internship, and I was hired as an accessibility developer. I ended up doing a lot of front-end work on it as well, but my primary focus was accessibility.</p>
     <p>It taught me a lot about web dev, working in large teams, and accessibility in general. It is actually what inspired this page, since my last portfolio wasn't as accessible as I was hoping it would be.</p>`,
     links: [
-        {href: "example.com", text: "Live", newTab: true},
+        {href: "https://lfg-backend-production.up.railway.app/", text: "Live", newTab: true},
         {href: "https://github.com/LookingforGrp-rit/LookingForGroup", text: "GitHub", newTab: true},
     ],
     categories: ['webdes', 'webdev'],
