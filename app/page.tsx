@@ -35,7 +35,7 @@ export default function Page() {
       </section> */}
 
       <section id="ai" tabIndex={-1}>
-        <h1>Non-AI Policy</h1>
+        <h1>Gen AI</h1>
         <AIPage />
       </section>
     </main>

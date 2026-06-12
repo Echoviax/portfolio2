@@ -2,8 +2,8 @@ export default function AIPage() {
     return (
         <div id="ai-page">
             <p style={{fontStyle: "italic", opacity: "0.75", fontSize: "0.95rem", marginBottom: "5px"}}>"Radium is the next big thing. If you aren't putting it in your water and toothpaste, you'll be left behind!"</p>
-            <p>No LLMs (hereinafter referred to as AI) were used to assist in or completely generate any parts of this website or any projects on it.</p>
-            <p>Due to — but not limited to — reasons like these</p>
+            <p>I am not inherently against the concept of generative AI. That being said, the current industry is so rushed that I cannot support it. Because of that, no generative AI (shortened to AI) was used to assist in or completely generate any parts of this website or any projects on it, and I do not personally use it.</p>
+            <p>If you're interested in my reasoning, it is due to — but not limited to — reasons like these:</p>
             <div id="ai-content">
                 <div className="ai-box">
                     <h2>Critical Thinking</h2>
