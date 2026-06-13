@@ -3,6 +3,7 @@ import { Link } from "../types/Link";
 import LinkComponent from "./LinkComponent";
 import { useEffect } from "react";
 import CategoryTag, { ProjectCategory } from "./ProjectCategory";
+import Image from "next/image";
 
 export default function ProjectPopup({project, closeFunction}: {
     project: Project, 
@@ -37,7 +38,7 @@ export default function ProjectPopup({project, closeFunction}: {
                 
                 {/* Image */}
                 <div className="popup-image">
-                    {project.imagePath ? <img src={`/images/projects/${project.imagePath}/image1.png`} alt="banner" /> : null}
+                    {project.imagePath ? <Image width={500} height={500} src={`/images/projects/${project.imagePath}/image1.png`} alt="banner" /> : null}
                 </div>
                 
                 {/* Links */}
