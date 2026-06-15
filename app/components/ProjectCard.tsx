@@ -21,7 +21,7 @@ export default function ProjectCard({ project, onClick, big }: { project: Projec
             }}
             className={big ? "project-card-big" : "project-card"}
         >
-            {project.imagePath ? <Image width={500} height={500} src={`/images/projects/${project.imagePath}/image1.png`} alt="banner" /> : null}
+            {project.imagePath ? <Image width={1000} height={800} src={`/images/projects/${project.imagePath}/image1.png`} alt="banner" /> : null}
             <div className="card-header">
                 <h3 id={titleId}>{project.title}</h3>
                 <div className="project-card-tags">

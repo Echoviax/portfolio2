@@ -38,7 +38,7 @@ export default function ProjectPopup({project, closeFunction}: {
                 
                 {/* Image */}
                 <div className="popup-image">
-                    {project.imagePath ? <Image width={500} height={500} src={`/images/projects/${project.imagePath}/image1.png`} alt="banner" /> : null}
+                    {project.imagePath ? <Image width={1920} height={1080} src={`/images/projects/${project.imagePath}/image1.png`} alt="banner" /> : null}
                 </div>
                 
                 {/* Links */}
