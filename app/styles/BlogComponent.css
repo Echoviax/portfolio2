@@ -1,5 +1,7 @@
 .blog-scroller {
     display: flex;
+    animation: fadeInUp 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    animation-delay: 0.1s;
 }
 
 .blog-link {
