@@ -63,6 +63,7 @@
     position: relative;
     overflow: hidden;
     transition: transform 0.25s;
+    user-select: none;
 }
 
 .project-card-big {

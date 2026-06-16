@@ -30,6 +30,11 @@ h1 {
     scrollbar-width: none;
 }
 
+img {
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
 @media (max-width: 1000px) {
     main {
         width: 100%;

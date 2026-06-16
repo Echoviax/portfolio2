@@ -195,6 +195,10 @@ for (let i = 0; i < allProjects.length; i++) {
 export default function ProjectsPage() {
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
     const scrollContainerRef = useRef<HTMLDivElement>(null);
+    const [isDragging, setIsDragging] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeftPosition, setScrollLeftPosition] = useState(0);
+    const hasDragged = useRef(false);
 
     const scroll = (direction: "left" | "right") => {
         if (scrollContainerRef.current) {
@@ -204,6 +208,43 @@ export default function ProjectsPage() {
                 behavior: "smooth",
             });
         }
+    };
+
+    const handleMouseDown = (e: React.MouseEvent) => {
+        if (!scrollContainerRef.current) 
+            return;
+
+        setIsDragging(true);
+        hasDragged.current = false;
+        setStartX(e.pageX - scrollContainerRef.current.offsetLeft);
+        setScrollLeftPosition(scrollContainerRef.current.scrollLeft);
+    };
+
+    const handleMouseLeave = () => {
+        setIsDragging(false);
+    };
+
+    const handleMouseUp = () => {
+        setIsDragging(false);
+    };
+
+    const handleMouseMove = (e: React.MouseEvent) => {
+        if (!isDragging || !scrollContainerRef.current) 
+            return;
+        e.preventDefault();
+        
+        const x = e.pageX - scrollContainerRef.current.offsetLeft;
+        const walk = (x - startX);
+
+        if (Math.abs(walk) > 5)
+            hasDragged.current = true;
+
+        scrollContainerRef.current.scrollLeft = scrollLeftPosition - walk;
+    };
+
+    const handleProjectClick = (project: Project) => {
+        if (!hasDragged.current)
+            setSelectedProject(project);
     };
 
     return (
@@ -216,22 +257,30 @@ export default function ProjectsPage() {
                 </div>
             </div>
 
-            <div ref={scrollContainerRef} className="hide-scroll project-content">
+            <div 
+                ref={scrollContainerRef} 
+                className="hide-scroll project-content"
+                onMouseDown={handleMouseDown}
+                onMouseLeave={handleMouseLeave}
+                onMouseUp={handleMouseUp}
+                onMouseMove={handleMouseMove}
+                style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
+            >
                 <div className="project-grid">
                     <div className="project-column">
                         <div className="project-row" style={{animationDelay: "0.1s"}}>
                             {row1.map((project) => (
-                                <ProjectCard key={`r1-${project.id}`} project={project} onClick={() => setSelectedProject(project)} />
+                                <ProjectCard key={`r1-${project.id}`} project={project} onClick={() => handleProjectClick(project)} />
                             ))}
                         </div>
                         <div className="project-row" style={{paddingLeft: "160px", animationDelay: "0.2s"}}>
                             {row2.map((project) => (
-                                <ProjectCard key={`r2-${project.id}`} project={project} onClick={() => setSelectedProject(project)} />
+                                <ProjectCard key={`r2-${project.id}`} project={project} onClick={() => handleProjectClick(project)} />
                             ))}
                         </div>
                         <div className="project-row" style={{animationDelay: "0.3s"}}>
                             {row3.map((project) => (
-                                <ProjectCard key={`r3-${project.id}`} project={project} onClick={() => setSelectedProject(project)} />
+                                <ProjectCard key={`r3-${project.id}`} project={project} onClick={() => handleProjectClick(project)} />
                             ))}
                         </div>
                     </div>
