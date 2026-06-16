@@ -36,7 +36,7 @@ export default function AboutPage() {
                 </div>
 
                 <div className="skill-footer">
-                    <p>The dots indicate proficiency, from 1-3</p>
+                    <p>Dots indicate proficiency, from 1-3</p>
                 </div>
             </div>
             <div className="about-cell" id="about-about">
