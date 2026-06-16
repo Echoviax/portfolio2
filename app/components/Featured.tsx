@@ -26,11 +26,13 @@ export default function FeaturedPage() {
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
     
     return (
-        <div id="featured-card">
-            <ProjectCard project={emmolb} onClick={() => setSelectedProject(emmolb)} big={true} />
+        <>
+            <div id="featured-card">
+                <ProjectCard project={emmolb} onClick={() => setSelectedProject(emmolb)} big={true} />
+            </div>
             {selectedProject && (
                 <ProjectPopup project={selectedProject} closeFunction={() => setSelectedProject(null)} />
             )}
-        </div>
+        </>
     );
 }
