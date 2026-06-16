@@ -90,7 +90,7 @@ export default function MobileNav() {
                 <SidebarButton link={"featured"} text="Featured" mobile />
                 <SidebarButton link={"projects"} text="Projects" mobile />
                 {/* <SidebarButton link={"gallery"} text="Gallery" mobile /> */}
-                <SidebarButton link={"ai"} text="GenAI Policy" mobile />
+                {/* <SidebarButton link={"ai"} text="GenAI Policy" mobile /> */}
             </div>
         </nav>
     );
