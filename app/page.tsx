@@ -4,6 +4,7 @@ import AboutPage from "./components/About";
 import ProjectsPage from "./components/Projects";
 import FeaturedPage from "./components/Featured";
 import Footer from "./components/Footer";
+import BlogComponent from "./components/BlogComponent";
 
 export const metadata: Metadata = {
   title: "Portfolio | Shards of Space",
@@ -36,6 +37,11 @@ export default function Page() {
         <h1>Gen AI</h1>
         <AIPage />
       </section> */}
+
+      <section id="blog" tabIndex={-1}>
+        <h1>Blog</h1>
+        <BlogComponent />
+      </section>
 
       <Footer />
     </main>

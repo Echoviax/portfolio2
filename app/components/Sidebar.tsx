@@ -42,6 +42,7 @@ export default function Sidebar() {
                 <SidebarButton link={"about"} text="About" />
                 <SidebarButton link={"featured"} text="Featured" />
                 <SidebarButton link={"projects"} text="Projects" />
+                <SidebarButton link={"blog"} text="Blog" />
                 {/* <SidebarButton link={"gallery"} text="Gallery" /> */}
                 {/* <SidebarButton link={"ai"} text="GenAI Policy" /> */}
             </section>
