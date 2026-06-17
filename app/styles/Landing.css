@@ -24,6 +24,7 @@
 
 /* It's being finnnicky on back arrow */
 .reset-main {
+    max-width: 100vw;
     left: 0;
     top: 0;
     width: 100%;
