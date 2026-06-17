@@ -32,16 +32,16 @@ export default function Landing() {
         return cuts.map((clipPath, i) => ({
             id: i,
             clipPath,
-            tx: `${(Math.random() - 0.5) * 20}px`,
-            ty: `${(Math.random() - 0.5) * 20}px`,
-            rot: `${(Math.random() - 0.5) * 10}deg`,
+            tx: `${(Math.random() - 0.5) * 3}%`,
+            ty: `${(Math.random() - 0.5) * 3}%`,
+            rot: `${(Math.random() - 0.5) * 5}deg`,
             animationDuration: `${Math.random() * 3 + 4}s`,
             animationDelay: `-${Math.random() * 5}s`, 
         }));
     }, []);
     
     return (
-        <main>
+        <main className="reset-main">
             <div className="landing-container">
                 {stars.map((star) => (
                     <div
