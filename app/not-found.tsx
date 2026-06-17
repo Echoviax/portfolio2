@@ -4,6 +4,12 @@ import './styles/Landing.css';
 import BackButton from './components/BackButton';
 import { useMemo } from 'react';
 import PageControls from './components/PageControls';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: "404 | Shards of Space",
+    description: "Page not found",
+};
 
 export default function NotFoundPage() {
     const stars = useMemo(() => {
