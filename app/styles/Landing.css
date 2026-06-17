@@ -34,7 +34,6 @@
     position: relative;
     width: 100vw;
     height: 100vh;
-    background-color: var(--bg-color);
     color: var(--main-text);
     overflow: hidden;
     display: flex;
@@ -102,6 +101,7 @@
     background-color: var(--primary-color);
     text-decoration: none;
     transition: all 0.25s;
+    box-shadow: 0 0 8px var(--primary-color);
 }
 
 .landing-link:hover,
@@ -111,7 +111,6 @@
     /* Fakes the font-weight change without shifting content */
     text-shadow: 0 0 0.5px currentColor, 0 0 0.5px currentColor;
     backdrop-filter: blur(1px);
-    box-shadow: 0 0 8px var(--primary-color);
 }
 
 @media screen and (max-width: 1000px) {

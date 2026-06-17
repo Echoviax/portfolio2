@@ -9,7 +9,6 @@ import BlogComponent from "../components/BlogComponent";
 import MobileNav from "../components/MobileNav";
 import ShaderBackground from "../components/ShaderBackground";
 import Sidebar from "../components/Sidebar";
-import { ShaderProvider } from "../context/ShaderContext";
 
 export const metadata: Metadata = {
   title: "Portfolio | Luna Berl",
@@ -18,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <ShaderProvider>
+    <>
       <Sidebar />
       <MobileNav />
       <ShaderBackground />
@@ -54,6 +53,6 @@ export default function Page() {
 
         <Footer />
       </main>
-    </ShaderProvider>
+    </>
   );
 }

@@ -3,6 +3,7 @@ import './styles/not-found.css'
 import './styles/Landing.css';
 import BackButton from './components/BackButton';
 import { useMemo } from 'react';
+import PageControls from './components/PageControls';
 
 export default function NotFoundPage() {
     const stars = useMemo(() => {
@@ -18,6 +19,7 @@ export default function NotFoundPage() {
         
     return (
         <main>
+            <PageControls />
             {stars.map((star) => (
                 <div
                     key={star.id}

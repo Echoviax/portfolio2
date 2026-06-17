@@ -1,0 +1,29 @@
+.page-controls {
+    position: absolute;
+    left: 32px;
+    top: 32px;
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 32px;
+    backdrop-filter: blur(2px);
+    z-index: 3;
+}
+
+.page-controls button {
+    background-color: var(--primary-color);
+    padding: 8px 12px;
+    border-radius: 16px;
+    width: 100%;
+    box-shadow: 0 0 8px var(--shadow-color);
+    transition: all 0.25s;
+}
+
+.page-controls button:hover {
+    background-color: var(--btn-hover-color);
+    transform: scale(1.02);
+    cursor: pointer;
+}

@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import './styles/Landing.css';
 import Link from "next/link";
 import { Metadata } from "next";
+import PageControls from "./components/PageControls";
 
 export const metadata: Metadata = {
     title: "Shards of Space",
@@ -42,6 +43,7 @@ export default function Landing() {
     
     return (
         <main className="reset-main">
+            <PageControls />
             <div className="landing-container">
                 {stars.map((star) => (
                     <div
