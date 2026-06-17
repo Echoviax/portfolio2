@@ -1,6 +1,12 @@
 import { useMemo } from "react";
 import './styles/Landing.css';
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Shards of Space",
+    description: "Expressing myself through web design",
+};
 
 export default function Landing() {
     const stars = useMemo(() => {
@@ -35,50 +41,52 @@ export default function Landing() {
     }, []);
     
     return (
-        <div className="landing-container">
-            {stars.map((star) => (
-                <div
-                    key={star.id}
-                    className="star"
-                    style={{
-                        top: star.top,
-                        left: star.left,
-                        width: star.size,
-                        height: star.size,
-                        animationDuration: star.animationDuration,
-                        animationDelay: star.animationDelay,
-                    }}
-                />
-            ))}
-            
-            <div className="content">
-                <h1 className="shatter">
-                    <span className="base-text">shardsof.space</span>
-                    
-                    {shatteredPieces.map((piece) => (
-                        <span
-                            key={piece.id}
-                            className="glass-shard"
-                            aria-hidden="true"
-                            style={{
-                                clipPath: piece.clipPath,
-                                '--tx': piece.tx,
-                                '--ty': piece.ty,
-                                '--rot': piece.rot,
-                                animationDuration: piece.animationDuration,
-                                animationDelay: piece.animationDelay,
-                            } as React.CSSProperties}
-                        >
-                            shardsof.space
-                        </span>
-                    ))}
-                </h1>
+        <main>
+            <div className="landing-container">
+                {stars.map((star) => (
+                    <div
+                        key={star.id}
+                        className="star"
+                        style={{
+                            top: star.top,
+                            left: star.left,
+                            width: star.size,
+                            height: star.size,
+                            animationDuration: star.animationDuration,
+                            animationDelay: star.animationDelay,
+                        }}
+                    />
+                ))}
+                
+                <div className="content">
+                    <h1 className="shatter">
+                        <span className="base-text">shardsof.space</span>
+                        
+                        {shatteredPieces.map((piece) => (
+                            <span
+                                key={piece.id}
+                                className="glass-shard"
+                                aria-hidden="true"
+                                style={{
+                                    clipPath: piece.clipPath,
+                                    '--tx': piece.tx,
+                                    '--ty': piece.ty,
+                                    '--rot': piece.rot,
+                                    animationDuration: piece.animationDuration,
+                                    animationDelay: piece.animationDelay,
+                                } as React.CSSProperties}
+                            >
+                                shardsof.space
+                            </span>
+                        ))}
+                    </h1>
 
-                <div className="links-parent">
-                    <Link href={"/portfolio"} className="landing-link">Portfolio</Link>
-                    <Link href={"/blog"} className="landing-link">Blog</Link>
+                    <div className="links-parent">
+                        <Link href={"/portfolio"} className="landing-link">Portfolio</Link>
+                        <Link href={"/blog"} className="landing-link">Blog</Link>
+                    </div>
                 </div>
             </div>
-        </div>
+        </main>
     );
 }
