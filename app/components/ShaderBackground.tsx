@@ -15,61 +15,61 @@ const vertShaderSource = `
   }
 `;
 
-const bokehFragShaderSource = `
-    precision highp float;
+// const bokehFragShaderSource = `
+//     precision highp float;
     
-    uniform float u_time;
-    uniform vec2 u_resolution;
-    uniform float u_white_theme;
+//     uniform float u_time;
+//     uniform vec2 u_resolution;
+//     uniform float u_white_theme;
 
-    #define iTime u_time
-    #define iResolution vec3(u_resolution, 0.0)
-    #define WHITE_THEME u_white_theme 
+//     #define iTime u_time
+//     #define iResolution vec3(u_resolution, 0.0)
+//     #define WHITE_THEME u_white_theme 
 
-    vec2 hash2(float n) {
-        vec2 n2 = vec2(n, -n + 2.1323);
-        return fract(sin(n2) * 1751.5453);
-    }
+//     vec2 hash2(float n) {
+//         vec2 n2 = vec2(n, -n + 2.1323);
+//         return fract(sin(n2) * 1751.5453);
+//     }
 
-    void main() {
-        vec2 uv = (gl_FragCoord.xy - 0.5 * iResolution.xy) / iResolution.y;
+//     void main() {
+//         vec2 uv = (gl_FragCoord.xy - 0.5 * iResolution.xy) / iResolution.y;
         
-        vec3 col = vec3(0.0);
-        float t = iTime / 4.0;
+//         vec3 col = vec3(0.0);
+//         float t = iTime / 4.0;
 
-        for(float i = 0.0; i < 100.0; i++) {
-            vec2 pos = hash2(i) * 2.0 - 1.0;
+//         for(float i = 0.0; i < 100.0; i++) {
+//             vec2 pos = hash2(i) * 2.0 - 1.0;
             
-            pos.x *= (iResolution.x / iResolution.y); 
-            pos += vec2(sin(t * 2.0 + i), cos(t * 1.5 + i * 0.8)) * 0.01;
+//             pos.x *= (iResolution.x / iResolution.y); 
+//             pos += vec2(sin(t * 2.0 + i), cos(t * 1.5 + i * 0.8)) * 0.01;
             
-            float dist = length(uv - pos);
-            float sizeScale = 0.7 + fract(sin(i * 34.12) * 232.1) * 0.5;
-            dist /= sizeScale;
+//             float dist = length(uv - pos);
+//             float sizeScale = 0.7 + fract(sin(i * 34.12) * 232.1) * 0.5;
+//             dist /= sizeScale;
             
-            float circle = smoothstep(0.12, 0.08, dist) * 0.4 + smoothstep(0.10, 0.09, dist) * 0.2;
-            float fade = sin(i * 123.45 + t * 2.0) * 0.5 + 0.5;
+//             float circle = smoothstep(0.12, 0.08, dist) * 0.4 + smoothstep(0.10, 0.09, dist) * 0.2;
+//             float fade = sin(i * 123.45 + t * 2.0) * 0.5 + 0.5;
 
-            vec3 circleColor = mix(vec3(1.0, 1.0, 1.0), vec3(0.7, 0.5, 0.8), 0.5 + 0.5 * sin(i * 1.2 + 1.9));
+//             vec3 circleColor = mix(vec3(1.0, 1.0, 1.0), vec3(0.7, 0.5, 0.8), 0.5 + 0.5 * sin(i * 1.2 + 1.9));
             
-            col += circle * fade * circleColor;
-        }
+//             col += circle * fade * circleColor;
+//         }
 
-        vec3 bgDark = vec3(0.05);
-        vec3 bgLight = vec3(1.0);
-        vec3 bgColor = mix(bgDark, bgLight, WHITE_THEME);
+//         vec3 bgDark = vec3(0.05);
+//         vec3 bgLight = vec3(1.0);
+//         vec3 bgColor = mix(bgDark, bgLight, WHITE_THEME);
         
-        if (WHITE_THEME > 0.5) {
-            float intensity = dot(col, vec3(0.199, 0.187, 0.114));
-            vec3 lightModePurple = vec3(0.5, 0.2, 0.8); 
-            col = mix(bgColor, lightModePurple, clamp(intensity * 1.5, 0.0, 1.0));
-        } else {
-            col += bgColor;
-        }
+//         if (WHITE_THEME > 0.5) {
+//             float intensity = dot(col, vec3(0.199, 0.187, 0.114));
+//             vec3 lightModePurple = vec3(0.5, 0.2, 0.8); 
+//             col = mix(bgColor, lightModePurple, clamp(intensity * 1.5, 0.0, 1.0));
+//         } else {
+//             col += bgColor;
+//         }
 
-        gl_FragColor = vec4(col, 1.0);
-    }
-`;
+//         gl_FragColor = vec4(col, 1.0);
+//     }
+// `;
 
 const auroraFragShaderSource = `
     // Heavily modified https://www.shadertoy.com/view/MlSfzz
@@ -127,7 +127,7 @@ const auroraFragShaderSource = `
     }
 `;
 
-const allShaders = [auroraFragShaderSource, bokehFragShaderSource];
+// const allShaders = [auroraFragShaderSource, bokehFragShaderSource];
 
 export default function ShaderBackground() {
     const { isShaderActive } = useShader();
@@ -175,13 +175,13 @@ export default function ShaderBackground() {
                 u_white_theme: { value: themeRef.current === "dark" ? 0.0 : 1.0 }
             };
 
-            const frag = allShaders[Math.floor(Math.random() * allShaders.length)];
+            // const frag = allShaders[Math.floor(Math.random() * allShaders.length)];
 
             geometry = new THREE.PlaneGeometry(2, 2);
             material = new THREE.ShaderMaterial({
                 uniforms: uniforms,
                 vertexShader: vertShaderSource,
-                fragmentShader: frag,
+                fragmentShader: auroraFragShaderSource,
             });
 
             const plane = new THREE.Mesh(geometry, material);
