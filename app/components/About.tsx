@@ -42,7 +42,7 @@ export default function AboutPage() {
             <div className="about-cell" id="about-about">
                 <h2>More Info</h2>
                 <div className="about-content">
-                    <p>My name is Luna Berl. I am a game designer and developer, as well as a web designer and developer.</p>
+                    <p>My name is Luna, though friends call me Echo. I am a game designer and developer, as well as a web designer and developer.</p>
                     <p>My focus is on the end-user, and as such, I prioritize accessibility and user experience over everything else in the projects that I make.</p>
                     <p>Outside of programming, I enjoy making and listening to music, astronomy, and learning languages.</p>
                 </div>
