@@ -1,5 +1,4 @@
 import "./globals.css";
-import './styles/Master.css';
 import { Geist } from 'next/font/google';
 import { ThemeProvider } from "next-themes";
 

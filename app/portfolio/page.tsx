@@ -1,3 +1,4 @@
+import '../styles/Master.css';
 import { Metadata } from "next";
 import AIPage from "../components/AI";
 import AboutPage from "../components/About";

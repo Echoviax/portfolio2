@@ -21,3 +21,24 @@ body {
   outline: 3px solid var(--outline-color);
   outline-offset: 4px;
 }
+
+.back-button {
+  background-color: var(--primary-color);
+  padding: 5px 10px;
+  border-radius: 16px;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  transition: background-color 0.25s;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background-color: var(--trans-primary-color);
+  cursor: pointer;
+}
