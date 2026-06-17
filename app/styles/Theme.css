@@ -7,6 +7,7 @@
   --hover-color: #00000024;
   --main-text: black;
   --invert-text: white;
+  --invisible-text: rgba(0, 0, 0, 0.15);
   --neutral-gray: #63636369;
   --popup-color: #eeeeee;
   --popup-background: #FFFA;
@@ -28,6 +29,7 @@
   --hover-color: #ffffff24;
   --main-text: white;
   --invert-text: black;
+  --invisible-text: rgba(255, 255, 255, 0.15);
   --neutral-gray: #9d9d9d69;
   --popup-color: #222;
   --popup-background: #000A;
