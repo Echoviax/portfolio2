@@ -13,6 +13,8 @@ main {
     border-radius: 16px;
     box-shadow: 0 0 16px var(--shadow-color);
     text-align: center;
+    backdrop-filter: blur(2px);
+    margin: 0 1rem;
 }
 
 .not-found-container h1 {
@@ -30,7 +32,9 @@ main {
 .not-found-links {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 16px;
     flex-wrap: wrap;
 }
 
@@ -39,7 +43,6 @@ main {
     padding: 10px 20px;
     font-weight: 500;
     font-size: 1rem;
-    margin-top: 16px;
     border-radius: 16px;
     transition: background-color 0.25s;
 }
