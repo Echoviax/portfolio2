@@ -1,7 +1,7 @@
 import "./globals.css";
 import { Geist } from 'next/font/google';
 import { ThemeProvider } from "next-themes";
-import { ShaderProvider } from "./context/ShaderContext";
+import { EffectProvider } from "./context/ShaderContext";
 
 const geist = Geist({
   subsets: ['latin'],
@@ -20,13 +20,13 @@ export default function RootLayout({
       className={`${geist.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <ShaderProvider>
+      <EffectProvider>
         <body className="min-h-full flex flex-col">
           <ThemeProvider attribute="class">
               {children}
           </ThemeProvider>
         </body>
-      </ShaderProvider>
+      </EffectProvider>
     </html>
   );
 }

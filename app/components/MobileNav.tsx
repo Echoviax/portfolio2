@@ -7,10 +7,10 @@ import { faEnvelope, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import SidebarLink from "./SidebarLink";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useTheme } from "next-themes";
-import { useShader } from "../context/ShaderContext";
+import { useEffects } from "../context/ShaderContext";
 
 export default function MobileNav() {
-    const { isShaderActive, toggleShader } = useShader();
+    const { areEffectsActive, toggleEffects } = useEffects();
     const [menuOpen, setMenuOpen] = useState(false);
     const { theme, setTheme } = useTheme();
     const [mounted, setMounted] = useState(false);
@@ -57,8 +57,8 @@ export default function MobileNav() {
                         Toggle Theme
                     </button> 
                 }
-                <button className="theme-btn-mobile" onClick={toggleShader}>
-                    {isShaderActive ? "Disable Effects" : "Enable Effects"}
+                <button className="theme-btn-mobile" onClick={toggleEffects}>
+                    {areEffectsActive ? "Disable Effects" : "Enable Effects"}
                 </button>
             </div>
 

@@ -8,12 +8,12 @@ import SidebarLink from "./SidebarLink";
 import SkipLink from "./SkipLink";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import { useShader } from "../context/ShaderContext";
+import { useEffects } from "../context/ShaderContext";
 
 export default function Sidebar() {
     const { theme, setTheme } = useTheme();
     const [mounted, setMounted] = useState(false);
-    const { isShaderActive, toggleShader } = useShader();
+    const { areEffectsActive, toggleEffects } = useEffects();
 
     useEffect(() => {
         setMounted(true);
@@ -34,8 +34,8 @@ export default function Sidebar() {
                         {theme === "dark" ? "Light Mode" : "Dark Mode"}
                     </button>
                 )}
-                <button className="theme-btn" onClick={toggleShader}>
-                    {isShaderActive ? "Disable Effects" : "Enable Effects"}
+                <button className="theme-btn" onClick={toggleEffects}>
+                    {areEffectsActive ? "Disable Effects" : "Enable Effects"}
                 </button>
             </section>
             <section className="nav-buttons">

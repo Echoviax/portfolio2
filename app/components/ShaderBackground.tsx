@@ -1,7 +1,7 @@
 'use client';
 import { useTheme } from "next-themes";
 import { useRef, useEffect, useState } from "react";
-import { useShader } from "../context/ShaderContext";
+import { useEffects } from "../context/ShaderContext";
 
 declare global {
     interface Window {
@@ -130,8 +130,8 @@ const auroraFragShaderSource = `
 // const allShaders = [auroraFragShaderSource, bokehFragShaderSource];
 
 export default function ShaderBackground() {
-    const { isShaderActive } = useShader();
-    if (!isShaderActive) return null;
+    const { areEffectsActive } = useEffects();
+    if (!areEffectsActive) return null;
 
     const mountRef = useRef<HTMLDivElement>(null);
     const { theme, resolvedTheme } = useTheme();
